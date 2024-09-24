@@ -1,0 +1,82 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.login-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 25vw;
+    max-width: 400px;
+    transition: all 0.3s ease;
+
+}
+.img{
+    background-image: url(img/R-FAST-PNG-05.png);
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+    border-radius: 8px;
+    width: 25vw;
+    height: 450px;
+    max-width: 400px;
+    transition: all 0.3s ease; 
+    margin: 20px; 
+}
+h2 {
+    text-align: center;
+    color: blue;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input[type="text"], input[type="date"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+button:hover {
+    background-color: darkblue;
+    transform: scale(1.1);
+}
+/*esto sirve para que haya menos padding en pantallas pequeñas mientras se agranda el boton y su letra*/
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px;
+    }
+    button {
+        padding: 15px;
+        font-size: 18px; 
+    }
+    .img{
+        display: none;
+    }
+}
+
+.loading {
+    display: none; /* La imagen de carga está oculta por defecto */
+    width: 50px;
+    margin: 0 auto;
+}

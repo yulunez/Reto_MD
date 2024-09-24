@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +7,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <div>
-            <h1>Iniciar Sesión</h1>
-            <p>¡Bienvenido a tu portal medico! Por favor ingresa tus datos<br>
-               para conocer los resultados de tus examenes</p>
-            <div>
-                <form action="" method="get">
-                    <label for="ciudad">Elige una ciudad:</label>
-                        <select id="ciudad" name="ciudad">
-                            <option value="Cédula de Ciudadania">Cédula de Ciudadania</option>
-                            <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
-                            <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
-                        </select>
-                    <input type="number" name="" id="" placeholder="documento">
-                    <button type="submit" name="btn">INICIAR SESION</button>
-                </form>
-            </div>
-        </div>
-        <div></div>
-    </div>
+<!--este div contiene todo el formulario de login-->
+<div class="login-container">
+    <!--Este es un pequeño mensaje de bienvenida-->
+    <h2>Iniciar Sesión</h2>
+    <p style="text-align: center;">¡Bienvenido a tu portal medico! <br> Por favor ingresa tus datos
+        para conocer los resultados de tus examenes</p>
+    <!--el formulario que lleva a la pagina php-->
+    <form action="login.php" method="POST">
+
+        <img src="https://i.gifer.com/YCZH.gif" class="loading" id="loadingImg" alt="Cargando...">
+
+
+        <label for="tipoDocumento">Tipo de documento:</label>
+        <select id="tipoDocumento" name="tipoDocumento" required>
+            <option value="">Selecciona...</option>
+            <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+            <option value="Cédula de Extranjería">Cédula de Extranjería</option>
+            <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+            <option value="Registro Civil">Registro Civil</option>
+            <option value="Pasaporte">Pasaporte</option>
+        </select>
+
+        
+        <label for="numeroDocumento">Número de documento:</label>
+        <input type="text" id="numeroDocumento" name="numeroDocumento" pattern="[0-9]+" required placeholder="Ingresa tu número de documento">
+
+        
+        <label for="fechaNacimiento">Fecha de nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+
+        
+        <button type="submit">Ingresar</button>
+    </form>
+</div>
+
+<div class="img">
+    <img src="" alt="">
+</div>
+
+<script src="main.js"></script>
 </body>
 </html>
