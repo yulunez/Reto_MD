@@ -99,6 +99,51 @@
                 </form>
                 
             </tr>
+            <tr>
+                <td>XXXXXXXXXXXX</td>
+                <td>XXXXXXXXXXXX</td>
+                <td>XXXXXXXXXXXX</td>
+                <form action="orden.php" method="POST">
+                    <td class="actions"><button name="ver">Ver</button></td>
+                </form>
+                
+            </tr>
+            <tr>
+                <td>XXXXXXXXXXXX</td>
+                <td>XXXXXXXXXXXX</td>
+                <td>XXXXXXXXXXXX</td>
+                <form action="orden.php" method="POST">
+                    <td class="actions"><button name="ver">Ver</button></td>
+                </form>
+                
+            </tr>
+            <tr>
+                <td>XXXXXXXXXXXX</td>
+                <td>XXXXXXXXXXXX</td>
+                <td>XXXXXXXXXXXX</td>
+                <form action="orden.php" method="POST">
+                    <td class="actions"><button name="ver">Ver</button></td>
+                </form>
+                
+            </tr>
+            <tr>
+                <td>XXXXXXXXXXXX</td>
+                <td>XXXXXXXXXXXX</td>
+                <td>XXXXXXXXXXXX</td>
+                <form action="orden.php" method="POST">
+                    <td class="actions"><button name="ver">Ver</button></td>
+                </form>
+                
+            </tr>
+            <tr>
+                <td>XXXXXXXXXXXX</td>
+                <td>XXXXXXXXXXXX</td>
+                <td>XXXXXXXXXXXX</td>
+                <form action="orden.php" method="POST">
+                    <td class="actions"><button name="ver">Ver</button></td>
+                </form>
+                
+            </tr>
         </tbody>
     </table>
 

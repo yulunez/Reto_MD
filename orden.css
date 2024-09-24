@@ -1,0 +1,187 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal usando CSS Grid */
+.container {
+    display: grid;
+    grid-template-columns: repeat(20, 5%); /* 20 columnas del 5% */
+    grid-template-rows: repeat(20, 5%); /* 20 filas del 5% */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    gap: 0; /* Sin espacio entre columnas y filas */
+}
+
+/* Estilo para el menú de navegación */
+nav {
+    position: fixed; /* Fijo para que baje con el scroll */
+    top: 0;
+    left: 0;
+    width: 20%; /* Ajusta el ancho para que se mantenga dentro del grid */
+    height: 100vh;
+    border-right: solid black;
+    color: black;
+    padding-left: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    width: 100%; /* Ajusta el ancho de los enlaces para que ocupen todo el nav */
+    color: black;
+    text-decoration: none;
+    margin: 10px 0;
+    font-size: 18px;
+    padding: 1rem;
+}
+
+img {
+    width: 10%;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 480px) {
+    nav {
+        position: relative;
+        height: auto;
+        width: 100%; /* Ocupa todo el ancho en dispositivos pequeños */
+        border-right: none;
+        border-bottom: solid black;
+        padding-left: 10px;
+        padding-top: 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav a {
+        width: auto;
+        font-size: 14px;
+        padding: 0.5rem;
+        margin: 0;
+    }
+
+    img {
+        width: 25%;
+        margin-right: 10px;
+    }
+}
+
+nav a:hover {
+    background-color: lightgrey;
+    color: darkblue;
+    border-radius: 45px;
+}
+
+.header {
+    grid-column: 5 / 21; 
+    grid-row: 1 / 4; 
+    display: flex;
+    align-items: center;
+    background-color: #f0f4f8;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.header img {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.header h1 {
+    flex-grow: 1;
+    font-size: 14px;
+    margin: 0;
+}
+
+.header button {
+    padding: 10px;
+    background-color: #ff4b4b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.header button:hover {
+    background-color: #ff0000;
+}
+
+/* Contenido principal */
+.content {
+    grid-column: 5 / 21; /* Ocupa desde la columna 5 hasta la 20 */
+    grid-row: 4 / 21; /* Empieza desde la fila 4 hasta el final */
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* 10 columnas de igual tamaño */
+    grid-gap: 20px; /* Espacio entre las celdas del grid */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Información del Paciente */
+.patient-info {
+    grid-column: 1 / -1; /* Ocupa todo el ancho disponible dentro de .content */
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* 10 columnas dentro de la sección */
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.patient-info .info {
+    grid-column: span 4; /* Cada bloque de información ocupa 5 columnas (50%) */
+    padding: 10px;
+}
+
+/* Grupo de Pruebas */
+.test-group {
+    grid-column: 1 / -1; /* Ocupa todo el ancho disponible */
+    margin-top: 20px;
+}
+
+.test-group h2 {
+    font-size: 1.5rem;
+    grid-column: 1 / -1; /* Ocupa todo el ancho disponible */
+    margin-bottom: 10px;
+}
+
+.test-group h3 {
+    font-size: 1.2rem;
+    grid-column: 1 / -1; /* Ocupa todo el ancho disponible */
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Tabla de Resultados */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #f0f0f0;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    font-weight: bold;
+}
+
+tbody{
+  margin-bottom: 20px;
+}
+
+.firma{
+
+}
