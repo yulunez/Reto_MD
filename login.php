@@ -14,7 +14,7 @@
     <div>
         <div>
             <h1>Iniciar Sesión</h1>
-            <p>¡Bienvenido a tu portal medico! Por favor ingresa tus <br>
+            <p>¡Bienvenido a tu portal medico! Por favor ingresa tus datos<br>
                para conocer los resultados de tus examenes</p>
             <div>
                 <form action="" method="get">
