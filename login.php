@@ -1,5 +1,7 @@
 <?php
-
+        if (isset($_GET['btn'])) {
+            
+        }
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +29,7 @@
                      <option value="">
                     </datalist>
                     <input type="number" name="" id="">
-                    
+                    <button type="submit" name="btn">INICIAR SESION</button>
                 </form>
             </div>
         </div>
