@@ -11,11 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reto_MD</title>
     <link rel="stylesheet" href="orden.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@1,500&display=swap');
+    </style>
 </head>
 <body>
 <nav>
-        <a href="home.php"><img src="home-icon.png" alt=""> Home</a>
-        <a href="perfil.php"><img src="profile-icon.png" alt=""> Perfil del usuario</a>
+        <a href="home.php"><img src="img/hogar.png" alt=""> Home</a>
+        <a href="perfil.php"><img src="img/perfil.png" alt="">Perfil del usuario</a>
     </nav>
 
     <div class="main-content">
@@ -85,3 +88,6 @@
     <script src="orden.js"></script>
 </body>
 </html>
+
+         
+
