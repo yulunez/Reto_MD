@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reto_MD</title>
     <link rel="stylesheet" href="login.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@1,500&display=swap');
+    </style>
 </head>
 <body>
 <!--este div contiene todo el formulario de login-->
@@ -16,7 +17,7 @@
     <p style="text-align: center;">¡Bienvenido a tu portal medico! <br> Por favor ingresa tus datos
         para conocer los resultados de tus examenes</p>
     <!--el formulario que lleva a la pagina php-->
-    <form action="home.php" method="POST">
+    <form action="home.php" method="GET" onsubmit="return validateForm()">
 
         <img src="https://i.gifer.com/YCZH.gif" class="loading" id="loadingImg" alt="Cargando...">
 
@@ -39,8 +40,13 @@
         <label for="fechaNacimiento">Fecha de nacimiento:</label>
         <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
 
-        
-        <button type="submit" name="btn">Ingresar</button>
+        <div class="captcha-container">
+            <canvas id="captcha-canvas" width="200" height="50"></canvas>
+            <button type="button" onclick="generateCaptcha()">Recargar CAPTCHA</button>
+            <input type="text" id="captcha-input" placeholder="Ingrese el código CAPTCHA" required>
+        </div>
+
+        <button type="submit" name="btn" class="btn">Ingresar</button>
     </form>
 </div>
 
@@ -51,3 +57,4 @@
 <script src="login.js"></script>
 </body>
 </html>
+
