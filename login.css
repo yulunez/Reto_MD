@@ -1,5 +1,6 @@
-body{
-    font-family: Arial, sans-serif;
+/*Estilo css*/
+body {
+    font-family: "Merriweather Sans", sans-serif;
     background-color: #f0f4f8;
     display: flex;
     justify-content: center;
@@ -7,6 +8,14 @@ body{
     height: 100vh;
     margin: 0;
 }
+
+.merriweather-sans-italic {
+    font-family: "Merriweather Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: italic;
+}
+
 .login-container {
     background-color: #fff;
     padding: 30px;
@@ -15,9 +24,9 @@ body{
     width: 25vw;
     max-width: 400px;
     transition: all 0.3s ease;
-
 }
-.img{
+
+.img {
     background-image: url(img/R-FAST-PNG-05.png);
     background-size: cover;
     background-position: center;
@@ -26,18 +35,21 @@ body{
     width: 25vw;
     height: 450px;
     max-width: 400px;
-    transition: all 0.3s ease; 
-    margin: 20px; 
+    transition: all 0.3s ease;
+    margin: 20px;
 }
+
 h2 {
     text-align: center;
     color: blue;
 }
+
 label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
+
 input[type="text"], input[type="date"], select {
     width: 100%;
     padding: 10px;
@@ -46,7 +58,48 @@ input[type="text"], input[type="date"], select {
     border-radius: 5px;
     box-sizing: border-box;
 }
-button {
+
+/* Estilos para el contenedor del CAPTCHA */
+.captcha-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#captcha-canvas {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.captcha-container button {
+    background-color: #ff4b4b;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.captcha-container button:hover {
+    background-color: darkblue;
+    transform: scale(1.05);
+}
+
+input[type="text"]#captcha-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.btn {
     width: 100%;
     padding: 10px;
     background-color: blue;
@@ -57,11 +110,13 @@ button {
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
+
 button:hover {
     background-color: darkblue;
     transform: scale(1.1);
 }
-/*esto sirve para que haya menos padding en pantallas pequeñas mientras se agranda el boton y su letra*/
+
+/* Ajustes para pantallas pequeñas */
 @media (max-width: 480px) {
     .login-container {
         padding: 20px;
@@ -70,7 +125,7 @@ button:hover {
         padding: 15px;
         font-size: 18px; 
     }
-    .img{
+    .img {
         display: none;
     }
 }
