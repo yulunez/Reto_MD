@@ -93,3 +93,5 @@ document.getElementById('nextPage').addEventListener('click', function() {
 
 // Cargar la primera página de órdenes al cargar la página
 cargarOrdenes(paginaActual);
+    
+     
