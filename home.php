@@ -36,7 +36,7 @@
     <h2>Ordenes de Laboratorio</h2>
     <div class="filtro">
       <div class="numero">
-        <label for="NumeroOrden">Numero de orden</label>
+        <label for="NumeroOrden">Número de orden</label>
         <input type="text" name="" id="">
       </div>
       <div class="fecha">
