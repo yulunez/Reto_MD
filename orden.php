@@ -13,90 +13,75 @@
     <link rel="stylesheet" href="orden.css">
 </head>
 <body>
-<div class="container">
-
-    <nav>
-        <a href="home.php"> <img src="img/hogar.png" alt="">Home</a>
-        <a href="perfil.php"><img src="img/perfil.png" alt="">Perfil de Usuario</a>
+<nav>
+        <a href="home.php"><img src="home-icon.png" alt=""> Home</a>
+        <a href="perfil.php"><img src="profile-icon.png" alt=""> Perfil del usuario</a>
     </nav>
 
-    <div class="header">
-        <img src="img/R-FAST-PNG-05.png" alt="Logo">
-        <h1>Pag. 1</h1>
-        <button onclick="redirigir()">Cerrar Sesión</button>
-    </div>
-    <main class="content">
-    <div class="patient-info">
-        <div class="info">
-            <p><strong>Paciente:</strong> XXXXXXXXX</p>
-            <p><strong>Identificación:</strong> XXXXXXXXX</p>
-            <p><strong>Sexo/Edad:</strong> XXXXXXXXX</p>
-            <p><strong>Administrador de salud:</strong> XXXXXXXXX</p>
+    <div class="main-content">
+        <div class="header">
+            <h1>Resultados de Laboratorio</h1>
+            <button class="logout-btn" onclick="redirigir()">Cerrar sesión</button>
         </div>
-        <div class="info">
-            <p><strong>Teléfono:</strong> XXXXXXXXX</p>
-            <p><strong>Médico:</strong> XXXXXXXXX</p>
-            <p><strong>Fecha orden:</strong> XXXXXXXXX</p>
+
+        <div class="patient-info">
+            <p><strong style="color: darkblue;">Paciente:</strong> XXXXXXXXXXXX</p>
+            <p><strong style="color: darkblue;">Identificación:</strong> XXXXXXXXXXXX</p>
+            <p><strong style="color: darkblue;">Teléfono:</strong> XXXXXXXXXXXX</p>
+            <p><strong style="color: darkblue;">Médico:</strong> XXXXXXXXXXXX</p>
+            <p><strong style="color: darkblue;">Servicio:</strong> XXXXXXXXXXXX</p>
+            <p><strong style="color: darkblue;">Fecha orden:</strong> XXXXXXXXXXXX</p>
         </div>
+
+        <div class="lab-group">
+            <h2>Nombre del grupo (hematología)</h2>
+            <h3>Nombre del procedimiento</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código de la prueba</th>
+                        <th>Nombre de la prueba</th>
+                        <th>Resultado</th>
+                        <th>Valores de Referencia</th>
+                        <th>Unidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>XXXXXXXXXXXX</td>
+                        <td>XXXXXXXXXXXX</td>
+                        <td>XXXXXXX</td>
+                        <td>XXXXXXX</td>
+                        <td>XXXXX</td>
+                    </tr>
+                    <tr>
+                        <td>XXXXXXXXXXXX</td>
+                        <td>XXXXXXXXXXXX</td>
+                        <td>XXXXXXX</td>
+                        <td>XXXXXXX</td>
+                        <td>XXXXX</td>
+                    </tr>
+                    <tr>
+                        <td>XXXXXXXXXXXX</td>
+                        <td>XXXXXXXXXXXX</td>
+                        <td>XXXXXXX</td>
+                        <td>XXXXXXX</td>
+                        <td>XXXXX</td>
+                    </tr>
+                    <tr>
+                        <td>XXXXXXXXXXXX</td>
+                        <td>XXXXXXXXXXXX</td>
+                        <td>XXXXXXX</td>
+                        <td>XXXXXXX</td>
+                        <td>XXXXX</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p style="color: rgb(1, 1, 75);">XXXXXXXXXXXXXXXXXXXX</p>
     </div>
 
-    <div class="test-group">
-        <h2>Nombre del grupo (hematología)</h2>
-        <h3>Nombre del procedimiento</h3>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Código de la prueba</th>
-                    <th>Nombre de la prueba</th>
-                    <th>Resultado</th>
-                    <th>Valores de Referencia</th>
-                    <th>Unidad</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                </tr>
-                <tr>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                </tr>
-                <tr>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                </tr>
-                <tr>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                </tr>
-                <tr>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                    <td>XXXXXXXXXXX</td>
-                </tr>
-            </tbody>
-            <div class="firma">
-            XXXXXXXXXXX
-            </div>
-        </table>
-    </div>
-    </main>
-</div>
+    <script src="orden.js"></script>
 </body>
 </html>
