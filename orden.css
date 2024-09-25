@@ -1,3 +1,4 @@
+/*Estilo CSS*/
 body {
     font-family: "Merriweather Sans", sans-serif;
     margin: 0;
@@ -5,7 +6,12 @@ body {
     display: flex;
     height: 100vh;
 }
-
+.merriweather-sans-italic {
+    font-family: "Merriweather Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: italic;
+  }
 nav {
     width: 200px;
     border-right: solid black;
@@ -18,7 +24,11 @@ nav a {
     padding: 10px;
     text-decoration: none;
     color: black;
-    font-weight: bold;
+}
+
+nav img {
+    width: 10%;
+    margin-right: 0.5rem;
 }
 
 nav a:hover {
@@ -112,3 +122,10 @@ th {
 .lab-group{
     background-color: rgba(0, 0, 255, 0.075);
 }
+
+
+
+
+
+
+
