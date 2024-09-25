@@ -1,4 +1,4 @@
-   // Inicializar variable para el texto del CAPTCHA
+// Inicializar variable para el texto del CAPTCHA
 let captchaText = '';
 
 // Función para generar el CAPTCHA
@@ -50,3 +50,4 @@ function validateForm() {
 window.onload = function() {
     generateCaptcha();
 }
+
