@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Perfil del Paciente</title>
     <link rel="stylesheet" href="perfil.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@1,500&display=swap');
@@ -30,10 +30,12 @@
 
 <!-- Contenido principal -->
 <div class="content">
-    <div class="usu">
-        <div class="imgperfil"></div>
-        <h2 class="saludo text">¡Hola paciente!</h2>
-        <p class="bienvenida text">Bienvenido al portal</p>
+    <div class="usu" style="display: flex; align-items: center;">
+        <img src="img/paciente.jpg" alt="Foto del Paciente" style="width: 150px; height: 150px;">
+        <div>
+            <h2 class="saludo text">¡Hola paciente!</h2>
+            <p class="bienvenida text">Bienvenido al portal</p>
+        </div>
     </div>
     <div class="datosu">
       <div class="dato">
@@ -42,7 +44,7 @@
             <p>xxxxxxxxxxxxxxxx</p>
         </div>
         <div class="imagen">
-            <img src="img/documento.jpg" alt="">
+            <img src="img/documento.jpg" alt="Documento">
         </div>
       </div>
       <div class="dato">
@@ -51,7 +53,7 @@
             <p>xxxxxxxxxxxxxxxx</p>
         </div>
         <div class="imagen">
-            <img src="img/numero-identificacion.jpg" alt="">
+            <img src="img/numero-identificacion.jpg" alt="Número de Identificación">
         </div>
       </div>
       <div class="dato">
@@ -60,7 +62,7 @@
             <p>xxxxxxxxxxxxxxxx</p>
         </div>
         <div class="imagen">
-            <img src="img/nombre.jpg" alt="">
+            <img src="img/nombre.jpg" alt="Nombre">
         </div>
       </div>
       <div class="dato">
@@ -69,7 +71,7 @@
             <p>xxxxxxxxxxxxxxxx</p>
         </div>
         <div class="imagen">
-           <img src="img/fecha_nac.jpg" alt=""> 
+           <img src="img/fecha_nac.jpg" alt="Fecha de Nacimiento"> 
         </div>
       </div>
       <div class="dato">
@@ -78,7 +80,7 @@
             <p>xxxxxxxxxxxxxxxx</p>
         </div>
         <div class="imagen">
-            <img src="img/sexo.biologico.jpg" alt="">
+            <img src="img/sexo.biologico.jpg" alt="Sexo Biológico">
         </div>
       </div>
       <div class="dato">
@@ -87,7 +89,7 @@
             <p>xxxxxxxxxxxxxxxx</p>
         </div>
         <div class="imagen">
-            <img src="img/direccion.jpg" alt="">
+            <img src="img/direccion.jpg" alt="Dirección">
         </div>
       </div>
       <div class="dato">
@@ -96,7 +98,7 @@
             <p>xxxxxxxxxxxxxxxx</p>
         </div>
         <div class="imagen">
-            <img src="img/telefono.jpg" alt="">
+            <img src="img/telefono.jpg" alt="Teléfono">
         </div>
       </div>
       <div class="dato">
@@ -105,7 +107,7 @@
             <p>xxxxxxxxxxxxxxxx</p>
         </div>
         <div class="imagen">
-            <img src="img/email.jpg" alt="">
+            <img src="img/email.jpg" alt="Correo Electrónico">
         </div>
       </div>
     </div>
@@ -116,3 +118,7 @@
     <script src="perfil.js"></script>
 </body>
 </html>
+
+
+     
+    
