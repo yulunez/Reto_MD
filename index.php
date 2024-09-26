@@ -1,9 +1,74 @@
 <?php
+session_start();
 include_once("conexion.php");
 
 $conexion = new Conexion();
 $db = $conexion->getConexion();
 
+if (isset($_GET['btn'])) {
+    $tipoDocumento = $_GET['tipoDocumento'];
+    $numeroDocumento = $_GET['numeroDocumento'];
+    $fechaNacimiento = $_GET['fechaNacimiento'];
+
+    // Validar entradas
+    $errors = [];
+
+    // Verificar que el tipo de documento sea un valor válido 
+    if (empty($tipoDocumento)) {
+        $errors[] = "Por favor, seleccione un tipo de documento.";
+    }
+
+    // Verifica que el número de documento contenga solo dígitos
+    if (!preg_match('/^\d+$/', $numeroDocumento)) {
+        $errors[] = "Número de documento debe ser solo dígitos.";
+    }
+
+    // Verifica que la fecha de nacimiento tenga un formato válido (YYYY-MM-DD)
+    if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $fechaNacimiento)) {
+        $errors[] = "Fecha de nacimiento debe estar en formato YYYY-MM-DD.";
+    }
+
+    // Si hay errores, se muestra y no ejecuta la consulta
+    if (!empty($errors)) {
+        foreach ($errors as $error) {
+            echo $error . "<br>";
+        }
+        exit; // Termina el script para evitar el envío
+    }
+
+    try {
+        // Preparar la consulta SQL
+        $query = "SELECT * FROM public.gen_m_persona WHERE id_tipoid = :tipoDocumento AND numeroid = :numeroDocumento AND fechanac = :fechaNacimiento";
+        
+        // Preparar la sentencia
+        $stmt = $db->prepare($query);
+
+        // Vincular los parámetros a los valores ingresados por el usuario
+        $stmt->bindParam(':tipoDocumento', $tipoDocumento);
+        $stmt->bindParam(':numeroDocumento', $numeroDocumento);
+        $stmt->bindParam(':fechaNacimiento', $fechaNacimiento);
+
+        // Ejecutar la consulta
+        $stmt->execute();
+
+        // Verificar si se encontró una coincidencia
+        if ($stmt->rowCount() > 0) {
+            // Obtener el usuario
+            $user = $stmt->fetch(PDO::FETCH_ASSOC); // Obtiene el primer resultado como un array asociativo
+
+            // Almacenar el ID del usuario en la sesión
+            $_SESSION['user_id'] = $user['id']; // Asegúrate de que 'id' es el nombre correcto de la columna
+
+            // Redirigir a otra página si los datos son correctos
+            header("Location: homeprueba.php"); 
+            exit; // Asegúrate de llamar a exit después de header
+        } else {
+            echo "Validación fallida. Los datos no coinciden con ningún registro.";
+        }
+    } catch (PDOException $e) {
+        echo "Error en la validación: " . $e->getMessage();
+    }
+}
 ?>
 
 <!DOCTYPE html>
