@@ -1,5 +1,10 @@
 <?php
+session_start();
+$userId = $_SESSION['user_id']; // Asegúrate de que la sesión tiene 'user_id'
 
+include_once("conexion.php");
+$conexion = new Conexion();
+$db = $conexion->getConexion();
 ?>
 
 <!DOCTYPE html>
