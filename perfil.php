@@ -1,14 +1,45 @@
 <?php
 session_start();
-$userId = $_SESSION['user_id']; // Asegúrate de que la sesión tiene 'user_id'
+$userId = $_SESSION['user_id']; // Asegúrate de que la sesión contiene 'user_id'
 
 include_once("conexion.php");
 $conexion = new Conexion();
 $db = $conexion->getConexion();
+
+try {
+    // Preparar la consulta SQL para obtener los datos del paciente
+    $query = "SELECT id_tipoid, numeroid, apellido1, apellido2, nombre1, nombre2, fechanac, id_sexobiologico, direccion, tel_movil, email 
+              FROM gen_m_persona 
+              WHERE id = :id";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':id', $userId, PDO::PARAM_INT);
+    $stmt->execute();
+
+    // Obtener los datos del paciente
+    $paciente = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($paciente) {
+        // Asignar los datos del paciente a variables
+        $id_tipoid = $paciente['id_tipoid'];
+        $apellido1 = $paciente['apellido1'];
+        $apellido2 = $paciente['apellido2'];
+        $nombre1 = $paciente['nombre1'];
+        $nombre2 = $paciente['nombre2'];
+        $fechanac = $paciente['fechanac'];
+        $id_sexobiologico = $paciente['id_sexobiologico'];
+        $direccion = $paciente['direccion'];
+        $tel_movil = $paciente['tel_movil'];
+        $email = $paciente['email'];
+    } else {
+        echo "No se encontró al paciente.";
+    }
+} catch (PDOException $e) {
+    echo "Error al obtener los datos del paciente: " . $e->getMessage();
+}
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +69,7 @@ $db = $conexion->getConexion();
     <div class="usu" style="display: flex; align-items: center;">
         <img src="img/paciente.jpg" alt="Foto del Paciente" style="width: 150px; height: 150px;">
         <div>
-            <h2 class="saludo text">¡Hola paciente!</h2>
+            <h2 class="saludo text">¡Hola, <?php echo $apellido1 . ' ' . $apellido2 . ' ' . $nombre1 . ' ' . $nombre2; ?>!</h2>
             <p class="bienvenida text">Bienvenido al portal</p>
         </div>
     </div>
@@ -46,7 +77,7 @@ $db = $conexion->getConexion();
       <div class="dato">
         <div class="texto">
             <h2>Tipo de Documento</h2>
-            <p>xxxxxxxxxxxxxxxx</p>
+            <p><?php echo $id_tipoid; ?></p>
         </div>
         <div class="imagen">
             <img src="img/documento.jpg" alt="Documento">
@@ -54,8 +85,8 @@ $db = $conexion->getConexion();
       </div>
       <div class="dato">
         <div class="texto">
-            <h2>Número de Identificacion</h2>
-            <p>xxxxxxxxxxxxxxxx</p>
+            <h2>Número de Identificación</h2>
+            <p><?php echo $userId; ?></p>
         </div>
         <div class="imagen">
             <img src="img/numero-identificacion.jpg" alt="Número de Identificación">
@@ -64,7 +95,7 @@ $db = $conexion->getConexion();
       <div class="dato">
         <div class="texto">
             <h2>Nombre Completo</h2>
-            <p>xxxxxxxxxxxxxxxx</p>
+            <?php echo $apellido1 . ' ' . $apellido2 . ' ' . $nombre1 . ' ' . $nombre2; ?>!</h2>
         </div>
         <div class="imagen">
             <img src="img/nombre.jpg" alt="Nombre">
@@ -73,7 +104,7 @@ $db = $conexion->getConexion();
       <div class="dato">
         <div class="texto">
             <h2>Fecha de nacimiento</h2>
-            <p>xxxxxxxxxxxxxxxx</p>
+            <p><?php echo $fechanac; ?></p>
         </div>
         <div class="imagen">
            <img src="img/fecha_nac.jpg" alt="Fecha de Nacimiento"> 
@@ -81,8 +112,8 @@ $db = $conexion->getConexion();
       </div>
       <div class="dato">
         <div class="texto">
-            <h2>Sexo Biologico</h2>
-            <p>xxxxxxxxxxxxxxxx</p>
+            <h2>Sexo Biológico</h2>
+            <p><?php echo $id_sexobiologico; ?></p>
         </div>
         <div class="imagen">
             <img src="img/sexo.biologico.jpg" alt="Sexo Biológico">
@@ -90,8 +121,8 @@ $db = $conexion->getConexion();
       </div>
       <div class="dato">
         <div class="texto">
-            <h2>Direccion de Residencia</h2>
-            <p>xxxxxxxxxxxxxxxx</p>
+            <h2>Dirección de Residencia</h2>
+            <p><?php echo $direccion; ?></p>
         </div>
         <div class="imagen">
             <img src="img/direccion.jpg" alt="Dirección">
@@ -99,8 +130,8 @@ $db = $conexion->getConexion();
       </div>
       <div class="dato">
         <div class="texto">
-            <h2>Número de Telefono</h2>
-            <p>xxxxxxxxxxxxxxxx</p>
+            <h2>Número de Teléfono</h2>
+            <p><?php echo $tel_movil; ?></p>
         </div>
         <div class="imagen">
             <img src="img/telefono.jpg" alt="Teléfono">
@@ -108,8 +139,8 @@ $db = $conexion->getConexion();
       </div>
       <div class="dato">
         <div class="texto">
-            <h2>Correo Electronico</h2>
-            <p>xxxxxxxxxxxxxxxx</p>
+            <h2>Correo Electrónico</h2>
+            <p><?php echo $email; ?></p>
         </div>
         <div class="imagen">
             <img src="img/email.jpg" alt="Correo Electrónico">
@@ -123,6 +154,13 @@ $db = $conexion->getConexion();
     <script src="perfil.js"></script>
 </body>
 </html>
+
+     
+    
+
+      
+        
+
 
 
      
